@@ -11,6 +11,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.util.Log;
 
+// IF THIS IS HERE THE GIT PROPERLY WORKED.
+
 public class DatabaseConnector 
 {
    // database name
@@ -40,54 +42,64 @@ public class DatabaseConnector
          database.close(); // close the database connection
    } // end method close
 
+   // inserts a new form in the database
+   public void insertForm(String name, String text)
+   {
+      ContentValues newContact = new ContentValues();
+      newContact.put("name", name);
+      newContact.put("body", text);
+
+      Log.i("Insert", name);
+      open(); // open the database
+      database.insert("forms", null, newContact);
+      close(); // close the database
+   } // end method insertForm
+
    // inserts a new contact in the database
-   public void insertContact(String name, String email, String phone, 
-      String state, String city, int familyMember)
+   public void insertSignature(String name, String email, int form)
    {
       ContentValues newContact = new ContentValues();
       newContact.put("name", name);
       newContact.put("email", email);
-      newContact.put("phone", phone);
-      newContact.put("street", state);
-      newContact.put("city", city);
-      newContact.put("familyMember", familyMember);
+      newContact.put("formID", form);
 
       Log.i("Insert", name);
       open(); // open the database
-      database.insert("contacts", null, newContact);
+      database.insert("signatures", null, newContact);
       close(); // close the database
    } // end method insertContact
 
-   // Edits a contact in the database
-   public void updateContact(long id, String name, String email, 
-      String phone, String state, String city, int familyMember)
+   // Edits a form in the database
+   public void editForm(long id, String name, String body)
    {
       ContentValues editContact = new ContentValues();
       editContact.put("name", name);
-      editContact.put("email", email);
-      editContact.put("phone", phone);
-      editContact.put("street", state);
-      editContact.put("city", city);
-      editContact.put("familyMember", familyMember);
+      editContact.put("body", body);
 
       open(); // open the database
-      database.update("contacts", editContact, "_id=" + id, null);
+      database.update("forms", editContact, "_id=" + id, null);
       close(); // close the database
    } // end method updateContact
 
-   // return a Cursor with all contact information in the database
-   public Cursor getAllContacts() 
+
+   /**
+    * return a Cursor with all the information in the database for the relevant table.
+    *
+    * @param table The name of the table to get the info from.
+    * @return a Cursor with all the information in the database for the relevant table.
+     */
+   public Cursor getAll(String table)
    {
-      return database.query("contacts", new String[] {"_id", "name"}, 
+      return database.query(table, new String[] {"_id", "name"},
          null, null, null, null, "name", null);
-   } // end method getAllContacts
+   }
 
    // get a Cursor containing all information about the contact specified
    // by the given id
-   public Cursor getOneContact(long id) 
+   public Cursor getOneForm(long id)
    {
       return database.query(
-         "contacts", null, "_id=" + id, null, null, null, null, null);
+         "forms", null, "_id=" + id, null, null, null, null);
    } // end method getOnContact
 
    // delete the contact specified by the given String name

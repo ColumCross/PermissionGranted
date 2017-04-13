@@ -42,6 +42,7 @@
         <activity
             android:name="edu.rit.columcross.permissiongranted.SettingsActivity"
             android:label="@string/title_activity_settings" />
+        <activity android:name="edu.rit.columcross.permissiongranted.SignaturesActivity" />
     </application>
 
 </manifest>

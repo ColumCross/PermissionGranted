@@ -3,6 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="edu.rit.columcross.permissiongranted.FormsActivity">
     <item
+        android:id="@+id/action_signatures"
+        android:orderInCategory="100"
+        android:title="@string/action_sigs"
+        app:showAsAction="never" />
+
+    <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:title="@string/action_settings"

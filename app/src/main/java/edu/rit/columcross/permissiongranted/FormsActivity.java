@@ -7,6 +7,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -48,11 +49,11 @@ public class FormsActivity extends AppCompatActivity {
 
         // map each contact's name to a TextView in the ListView layout
         String[] from = new String[] { "name" };
-        int[] to = new int[] { R.id.contactTextView };
+        int[] to = new int[] { R.id.formTextView };
         contactAdapter = new SimpleCursorAdapter(
-                AddressBook.this, R.layout.contact_list_item, null, from, to, 0);
+                FormsActivity.this, R.layout.form_list_item, null, from, to, 0);
 
-        contactListView.setAdapter(contactAdapter); // set contactView's adapter to bind the ListView to the CursorAdapter so the ListView can display the data.
+        formListView.setAdapter(contactAdapter); // set contactView's adapter to bind the ListView to the CursorAdapter so the ListView can display the data.
 
 
         // FAB Controls
@@ -60,6 +61,7 @@ public class FormsActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Log.i("***************", "******************");
                 // create a new Intent to launch the AddEditContact Activity
                 Intent addNewContact =
                         new Intent(FormsActivity.this, NewForm.class);
@@ -81,12 +83,20 @@ public class FormsActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
-        /* create a new Intent to launch the AddEditContact Activity
-        Intent addNewContact =
-                new Intent(FormsActivity.this, .class);
-        startActivity(addNewContact); // start the AddEditContact Activity
-        */
-        return super.onOptionsItemSelected(item); // call super's method
+        switch (item.getItemId()) // switch based on selected MenuItem's ID
+        {
+            case R.id.action_settings:
+                // create an Intent to launch the Settings Activity
+                Intent addEditContact =
+                        new Intent(this, SettingsActivity.class);
+                startActivity(addEditContact); // start the Activity
+                return true;
+            case R.id.action_signatures:
+                startActivity(new Intent(this, SignaturesActivity.class));
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        } // end switch
     } // end method onOptionsItemSelected
 
     // event listener that responds to the user touching a contact's name
