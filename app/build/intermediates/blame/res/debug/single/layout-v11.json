@@ -1,26 +1,50 @@
 [
     {
-        "merged": "/Users/Student/Desktop/PermissionGranted/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media.xml",
-        "source": "/Users/Student/.android/build-cache/9bd7eafef96eb26df93a158a73fa466e7f9da4c4/output/res/layout-v11/notification_template_big_media.xml"
+        "merged": "A:\\Documents\\School\\2165\\MAD2\\PermissionGranted\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_narrow_custom.xml",
+        "source": "C:\\Users\\Colum\\.android\\build-cache\\3999f0d7e4aeec0f8c9c89cd580fade6b99ba89f\\output\\res\\layout-v11\\notification_template_big_media_narrow_custom.xml"
     },
     {
-        "merged": "/Users/Student/Desktop/PermissionGranted/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_custom.xml",
-        "source": "/Users/Student/.android/build-cache/9bd7eafef96eb26df93a158a73fa466e7f9da4c4/output/res/layout-v11/notification_template_big_media_custom.xml"
+        "merged": "A:\\Documents\\School\\2165\\MAD2\\PermissionGranted\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media.xml",
+        "source": "C:\\Users\\Colum\\.android\\build-cache\\3999f0d7e4aeec0f8c9c89cd580fade6b99ba89f\\output\\res\\layout-v11\\notification_template_big_media.xml"
     },
     {
-        "merged": "/Users/Student/Desktop/PermissionGranted/app/build/intermediates/res/merged/debug/layout-v11/notification_media_action.xml",
-        "source": "/Users/Student/.android/build-cache/9bd7eafef96eb26df93a158a73fa466e7f9da4c4/output/res/layout-v11/notification_media_action.xml"
+        "merged": "A:\\Documents\\School\\2165\\MAD2\\PermissionGranted\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_narrow.xml",
+        "source": "C:\\Users\\Colum\\.android\\build-cache\\3999f0d7e4aeec0f8c9c89cd580fade6b99ba89f\\output\\res\\layout-v11\\notification_template_big_media_narrow.xml"
     },
     {
-        "merged": "/Users/Student/Desktop/PermissionGranted/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_narrow.xml",
-        "source": "/Users/Student/.android/build-cache/9bd7eafef96eb26df93a158a73fa466e7f9da4c4/output/res/layout-v11/notification_template_big_media_narrow.xml"
+        "merged": "A:\\Users\\Student\\Desktop\\PermissionGranted\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_cancel_action.xml",
+        "source": "A:\\Users\\Student\\.android\\build-cache\\9bd7eafef96eb26df93a158a73fa466e7f9da4c4\\output\\res\\layout-v11\\notification_media_cancel_action.xml"
     },
     {
-        "merged": "/Users/Student/Desktop/PermissionGranted/app/build/intermediates/res/merged/debug/layout-v11/notification_media_cancel_action.xml",
-        "source": "/Users/Student/.android/build-cache/9bd7eafef96eb26df93a158a73fa466e7f9da4c4/output/res/layout-v11/notification_media_cancel_action.xml"
+        "merged": "A:\\Documents\\School\\2165\\MAD2\\PermissionGranted\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_cancel_action.xml",
+        "source": "C:\\Users\\Colum\\.android\\build-cache\\3999f0d7e4aeec0f8c9c89cd580fade6b99ba89f\\output\\res\\layout-v11\\notification_media_cancel_action.xml"
     },
     {
-        "merged": "/Users/Student/Desktop/PermissionGranted/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_narrow_custom.xml",
-        "source": "/Users/Student/.android/build-cache/9bd7eafef96eb26df93a158a73fa466e7f9da4c4/output/res/layout-v11/notification_template_big_media_narrow_custom.xml"
+        "merged": "A:\\Users\\Student\\Desktop\\PermissionGranted\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_narrow.xml",
+        "source": "A:\\Users\\Student\\.android\\build-cache\\9bd7eafef96eb26df93a158a73fa466e7f9da4c4\\output\\res\\layout-v11\\notification_template_big_media_narrow.xml"
+    },
+    {
+        "merged": "A:\\Users\\Student\\Desktop\\PermissionGranted\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_custom.xml",
+        "source": "A:\\Users\\Student\\.android\\build-cache\\9bd7eafef96eb26df93a158a73fa466e7f9da4c4\\output\\res\\layout-v11\\notification_template_big_media_custom.xml"
+    },
+    {
+        "merged": "A:\\Users\\Student\\Desktop\\PermissionGranted\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_action.xml",
+        "source": "A:\\Users\\Student\\.android\\build-cache\\9bd7eafef96eb26df93a158a73fa466e7f9da4c4\\output\\res\\layout-v11\\notification_media_action.xml"
+    },
+    {
+        "merged": "A:\\Documents\\School\\2165\\MAD2\\PermissionGranted\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_custom.xml",
+        "source": "C:\\Users\\Colum\\.android\\build-cache\\3999f0d7e4aeec0f8c9c89cd580fade6b99ba89f\\output\\res\\layout-v11\\notification_template_big_media_custom.xml"
+    },
+    {
+        "merged": "A:\\Users\\Student\\Desktop\\PermissionGranted\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media.xml",
+        "source": "A:\\Users\\Student\\.android\\build-cache\\9bd7eafef96eb26df93a158a73fa466e7f9da4c4\\output\\res\\layout-v11\\notification_template_big_media.xml"
+    },
+    {
+        "merged": "A:\\Users\\Student\\Desktop\\PermissionGranted\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_narrow_custom.xml",
+        "source": "A:\\Users\\Student\\.android\\build-cache\\9bd7eafef96eb26df93a158a73fa466e7f9da4c4\\output\\res\\layout-v11\\notification_template_big_media_narrow_custom.xml"
+    },
+    {
+        "merged": "A:\\Documents\\School\\2165\\MAD2\\PermissionGranted\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_action.xml",
+        "source": "C:\\Users\\Colum\\.android\\build-cache\\3999f0d7e4aeec0f8c9c89cd580fade6b99ba89f\\output\\res\\layout-v11\\notification_media_action.xml"
     }
 ]

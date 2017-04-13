@@ -1,10 +1,18 @@
 [
     {
-        "merged": "/Users/Student/Desktop/PermissionGranted/app/build/intermediates/res/merged/debug/mipmap-xhdpi/ic_launcher_round.png",
-        "source": "/Users/Student/Desktop/PermissionGranted/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
+        "merged": "A:\\Users\\Student\\Desktop\\PermissionGranted\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher.png",
+        "source": "A:\\Users\\Student\\Desktop\\PermissionGranted\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
-        "merged": "/Users/Student/Desktop/PermissionGranted/app/build/intermediates/res/merged/debug/mipmap-xhdpi/ic_launcher.png",
-        "source": "/Users/Student/Desktop/PermissionGranted/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+        "merged": "A:\\Documents\\School\\2165\\MAD2\\PermissionGranted\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher.png",
+        "source": "A:\\Documents\\School\\2165\\MAD2\\PermissionGranted\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "A:\\Users\\Student\\Desktop\\PermissionGranted\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher_round.png",
+        "source": "A:\\Users\\Student\\Desktop\\PermissionGranted\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "A:\\Documents\\School\\2165\\MAD2\\PermissionGranted\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher_round.png",
+        "source": "A:\\Documents\\School\\2165\\MAD2\\PermissionGranted\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
     }
 ]

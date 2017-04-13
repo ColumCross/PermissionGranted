@@ -112,10 +112,12 @@ public class DatabaseConnector
       public void onCreate(SQLiteDatabase db) 
       {
          // query to create a new table named contacts
-         String createQuery = "CREATE TABLE contacts" +
+         String createQuery = "CREATE TABLE forms" +
             "(_id integer primary key autoincrement," +
-            "name TEXT, email TEXT, phone TEXT," +
-            "street TEXT, city TEXT, familyMember INT);";
+            "name TEXT, body TEXT);" +
+                 "CREATE TABLE signatures" +
+                 "(_id integer primary key autoincrement," +
+                 "name TEXT, email TEXT, formID INT);";
                   
          db.execSQL(createQuery); // execute the query
       } // end method onCreate

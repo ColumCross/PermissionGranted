@@ -3,10 +3,16 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_new_form">Create New Form</string>
 
+    <!-- Strings for the Forms Page -->
+    <string name="no_forms">No forms exist. Create a form by pressing the \"+\" button in the lower right.</string>
+
     <!-- Strings related to creating a new form -->
-    <string name="prompt_email">Form Name</string>
+    <string name="prompt_name">Form Name</string>
     <string name="prompt_form">Form Text</string>
     <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to the Signatures Page -->
+    <string name="no_sigs">No signatures exist.</string>
 
     <!-- Strings related to Settings -->
 
