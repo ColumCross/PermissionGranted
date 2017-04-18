@@ -592,6 +592,7 @@
     <dimen name="abc_text_size_title_material_toolbar">20dp</dimen>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="appbar_padding_top">8dp</dimen>
     <dimen name="design_appbar_elevation">4dp</dimen>
     <dimen name="design_bottom_navigation_active_item_max_width">168dp</dimen>
     <dimen name="design_bottom_navigation_active_text_size">14sp</dimen>
@@ -720,7 +721,15 @@
     <string name="app_name">Permission Granted</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="button_delete">Delete</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
+    <string name="consent_button">I consent to the terms listed above.</string>
+    <string name="edit_form">Edit Form</string>
+    <string name="errorButton">OK</string>
+    <string name="errorMessage">You must enter a contact name</string>
+    <string name="errorTitle">Contact Name is Required</string>
+    <string name="form_placeholder_text">Do you consent?</string>
     <string name="no_forms">No forms exist. Create a form by pressing the \"+\" button in the lower right.</string>
     <string name="no_sigs">No signatures exist.</string>
     <string name="password_toggle_content_description">Toggle password visibility</string>
@@ -747,9 +756,11 @@
     <string name="prompt_form">Form Text</string>
     <string name="prompt_name">Form Name</string>
     <string name="search_menu_title">Search</string>
+    <string name="section_format">Hello World from section: %1$d</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="title_activity_new_form">Create New Form</string>
     <string name="title_activity_settings">Settings</string>
+    <string name="title_activity_test">TestActivity</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>

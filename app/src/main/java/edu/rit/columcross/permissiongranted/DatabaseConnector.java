@@ -56,12 +56,12 @@ public class DatabaseConnector
    } // end method insertForm
 
    // inserts a new contact in the database
-   public void insertSignature(String name, String email, int form)
+   public void insertSignature(String name, String email, String form)
    {
       ContentValues newContact = new ContentValues();
       newContact.put("name", name);
       newContact.put("email", email);
-      newContact.put("formID", form);
+      newContact.put("formText", form);
 
       Log.i("Insert", name);
       open(); // open the database
@@ -129,7 +129,7 @@ public class DatabaseConnector
             "name TEXT, body TEXT);" +
                  "CREATE TABLE signatures" +
                  "(_id integer primary key autoincrement," +
-                 "name TEXT, email TEXT, formID INT);";
+                 "name TEXT, email TEXT, formText TEXT);";
                   
          db.execSQL(createQuery); // execute the query
       } // end method onCreate

@@ -1,7 +1,9 @@
 package edu.rit.columcross.permissiongranted;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Color;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -38,7 +40,7 @@ public class FormsActivity extends AppCompatActivity {
 
         formListView = (ListView) findViewById(R.id.formListView);; // get the ListView
         formListView.setOnItemClickListener(viewFormListener);
-        formListView.setBackgroundColor(Color.BLACK);
+        //formListView.setBackgroundColor(Color.BLACK);
         // display message on empty list
         TextView emptyText = (TextView)View.inflate(this,
                 R.layout.forms_list_empty_item, null);
@@ -64,11 +66,59 @@ public class FormsActivity extends AppCompatActivity {
                 Log.i("***************", "******************");
                 // create a new Intent to launch the AddEditContact Activity
                 Intent addNewContact =
-                        new Intent(FormsActivity.this, NewForm.class);
+                        new Intent(FormsActivity.this, AddEditForm.class);
                 startActivity(addNewContact); // start the AddEditContact Activity
             }
         });
     }
+
+    @Override
+//called each time an Activity returns to the foreground including when it is
+//first created
+    protected void onResume()
+    {
+        super.onResume(); // call super's onResume method
+
+        // create new GetContactsTask and execute it
+        //this is an AsyncTask that gets the complete list of contacts from the db
+        //and sets the contactAdapter’s Cursor for populating the ListView.
+        //AsyncTask method: execute performs the task in a separate thread
+        //Every time this happens, a task is created because an AsyncTask can only
+        //be executed once
+        new GetContactsTask().execute((Object[]) null);
+    } // end method onResume
+
+    // performs database query outside GUI thread
+    private class GetContactsTask extends AsyncTask<Object, Object, Cursor>
+    {
+        DatabaseConnector databaseConnector =
+                new DatabaseConnector(FormsActivity.this);
+
+        // perform the database access
+        @Override
+        protected Cursor doInBackground(Object... params)
+        {
+            databaseConnector.open();
+
+            // get a cursor containing call contacts
+            return databaseConnector.getAll("forms");
+        } // end method doInBackground
+
+        // use the Cursor returned from the doInBackground method
+        @Override
+        protected void onPostExecute(Cursor result)
+        {
+            contactAdapter.changeCursor(result); // set the adapter's Cursor
+            databaseConnector.close();
+        } // end method onPostExecute
+    } // end class GetContactsTask
+
+
+
+
+
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -98,6 +148,10 @@ public class FormsActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         } // end switch
     } // end method onOptionsItemSelected
+
+
+
+
 
     // event listener that responds to the user touching a contact's name
     // in the ListView

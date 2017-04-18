@@ -6,34 +6,100 @@
     density="xxhdpi"
     format="10"
     plugin-version="2.3.0"
-    timestamp="1491940745855"
+    timestamp="1492483160806"
     token="-5647476519147986797"
     verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="368" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="275" />
+        duration="0" />
     <task
         name="verifier"
-        duration="27" />
+        duration="0" />
 
     <artifact
-        location="/Users/Student/Desktop/PermissionGranted/app/build/outputs/apk/app-debug.apk"
-        type="MAIN" />
+        location="A:\Documents\School\2165\MAD2\PermissionGranted\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+        type="SPLIT" />
+    <artifact
+        location="A:\Documents\School\2165\MAD2\PermissionGranted\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+        type="SPLIT" />
+    <artifact
+        location="A:\Documents\School\2165\MAD2\PermissionGranted\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+        type="SPLIT" />
+    <artifact
+        location="A:\Documents\School\2165\MAD2\PermissionGranted\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+        type="SPLIT" />
+    <artifact
+        location="A:\Documents\School\2165\MAD2\PermissionGranted\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+        type="SPLIT" />
+    <artifact
+        location="A:\Documents\School\2165\MAD2\PermissionGranted\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+        type="SPLIT" />
+    <artifact
+        location="A:\Documents\School\2165\MAD2\PermissionGranted\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+        type="SPLIT" />
+    <artifact
+        location="A:\Documents\School\2165\MAD2\PermissionGranted\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+        type="SPLIT" />
+    <artifact
+        location="A:\Documents\School\2165\MAD2\PermissionGranted\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+        type="SPLIT" />
+    <artifact
+        location="A:\Documents\School\2165\MAD2\PermissionGranted\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+        type="SPLIT" />
+    <artifact
+        location="A:\Documents\School\2165\MAD2\PermissionGranted\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+        type="SPLIT" />
+    <artifact
+        location="A:\Documents\School\2165\MAD2\PermissionGranted\app\build\outputs\apk\app-debug.apk"
+        type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
-        timestamp="1491940745855"
+        timestamp="1492483160806"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="/Users/Student/Desktop/PermissionGranted/app/build/outputs/apk/app-debug.apk"
-            type="MAIN" />
+            location="A:\Documents\School\2165\MAD2\PermissionGranted\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+            type="SPLIT" />
+        <artifact
+            location="A:\Documents\School\2165\MAD2\PermissionGranted\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+            type="SPLIT" />
+        <artifact
+            location="A:\Documents\School\2165\MAD2\PermissionGranted\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+            type="SPLIT" />
+        <artifact
+            location="A:\Documents\School\2165\MAD2\PermissionGranted\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+            type="SPLIT" />
+        <artifact
+            location="A:\Documents\School\2165\MAD2\PermissionGranted\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            type="SPLIT" />
+        <artifact
+            location="A:\Documents\School\2165\MAD2\PermissionGranted\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+            type="SPLIT" />
+        <artifact
+            location="A:\Documents\School\2165\MAD2\PermissionGranted\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+            type="SPLIT" />
+        <artifact
+            location="A:\Documents\School\2165\MAD2\PermissionGranted\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+            type="SPLIT" />
+        <artifact
+            location="A:\Documents\School\2165\MAD2\PermissionGranted\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+            type="SPLIT" />
+        <artifact
+            location="A:\Documents\School\2165\MAD2\PermissionGranted\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            type="SPLIT" />
+        <artifact
+            location="A:\Documents\School\2165\MAD2\PermissionGranted\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            type="SPLIT" />
+        <artifact
+            location="A:\Documents\School\2165\MAD2\PermissionGranted\app\build\outputs\apk\app-debug.apk"
+            type="SPLIT_MAIN" />
     </build>
 
 </instant-run>

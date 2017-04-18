@@ -5,19 +5,33 @@
     <string name="action_sigs">Signatures</string>
     <string name="action_settings">Settings</string>
 
-
+    <!-- Strings related to creating and editing a new form -->
     <string name="title_activity_new_form">Create New Form</string>
+    <string name="edit_form">Edit Form</string>
 
-    <!-- Strings for the Forms Page -->
-    <string name="no_forms">No forms exist. Create a form by pressing the \"+\" button in the lower right.</string>
+    <string name="errorButton">OK</string>
+    <string name="errorTitle">Contact Name is Required</string>
+    <string name="errorMessage">You must enter a contact name</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="button_delete">Delete</string>
 
-    <!-- Strings related to creating a new form -->
     <string name="prompt_name">Form Name</string>
     <string name="prompt_form">Form Text</string>
     <string name="title_activity_settings">Settings</string>
 
+    <!-- Strings for the Forms Page -->
+    <string name="no_forms">No forms exist. Create a form by pressing the \"+\" button in the lower right.</string>
+
     <!-- Strings related to the Signatures Page -->
     <string name="no_sigs">No signatures exist.</string>
+
+    <!-- Strings related to viewing a form -->
+    <string name="consent_button">I consent to the terms listed above.</string>
+    <string name="form_placeholder_text">Do you consent?</string>
+
+
+
+
 
     <!-- Strings related to Settings -->
 
@@ -90,4 +104,6 @@
     <string name="pref_ringtone_silent">Silent</string>
 
     <string name="pref_title_vibrate">Vibrate</string>
+    <string name="title_activity_test">TestActivity</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 </resources>

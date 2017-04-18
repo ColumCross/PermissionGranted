@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="edu.rit.columcross.permissiongranted.NewForm">
+    tools:context="edu.rit.columcross.permissiongranted.AddEditForm">
 
     <!-- Login progress -->
     <ProgressBar
@@ -35,13 +35,13 @@
                 android:layout_height="wrap_content">
 
                 <AutoCompleteTextView
-                    android:id="@+id/name"
+                    android:id="@+id/editFormName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/prompt_name"
+                    android:inputType="text"
                     android:maxLines="1"
-                    android:singleLine="true"
-                    android:inputType="text" />
+                    android:singleLine="true" />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -50,11 +50,11 @@
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/password"
+                    android:id="@+id/editFormText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/prompt_form"
-                    android:imeActionId="@+id/formText"
+                    android:imeActionId="@+id/editFormText"
                     android:imeOptions="actionUnspecified"
                     android:inputType="text"
                     android:maxLines="5"
@@ -63,7 +63,7 @@
             </android.support.design.widget.TextInputLayout>
 
             <Button
-                android:id="@+id/email_sign_in_button"
+                android:id="@+id/saveFormButton"
                 style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

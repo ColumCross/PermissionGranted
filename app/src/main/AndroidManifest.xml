@@ -24,15 +24,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".NewForm"
-            android:label="@string/title_activity_new_form" />
         <activity android:name=".ViewForm" />
         <activity android:name=".ViewSignature" />
         <activity
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings" />
-        <activity android:name=".SignaturesActivity"></activity>
+        <activity android:name=".SignaturesActivity" />
+
+        <activity
+            android:name=".AddEditForm"
+            android:label="@string/title_activity_new_form" />
     </application>
 
 </manifest>
