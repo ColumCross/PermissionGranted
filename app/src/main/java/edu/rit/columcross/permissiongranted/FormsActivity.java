@@ -2,11 +2,9 @@ package edu.rit.columcross.permissiongranted;
 
 import android.content.Intent;
 import android.database.Cursor;
-import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -26,7 +24,7 @@ public class FormsActivity extends AppCompatActivity {
     public static final String ROW_ID = "row_id";
 
     // refer to the ListActivity's built-in ListView so we can deal with it programmatically
-    private ListView formListView;
+    private ListView activityListView;
 
     // adapter for populating the ListView
     private CursorAdapter contactAdapter;
@@ -38,16 +36,16 @@ public class FormsActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        formListView = (ListView) findViewById(R.id.formListView);; // get the ListView
-        formListView.setOnItemClickListener(viewFormListener);
-        //formListView.setBackgroundColor(Color.BLACK);
+        activityListView = (ListView) findViewById(R.id.formListView);; // get the ListView
+        activityListView.setOnItemClickListener(viewFormListener);
+        //activityListView.setBackgroundColor(Color.BLACK);
         // display message on empty list
         TextView emptyText = (TextView)View.inflate(this,
                 R.layout.forms_list_empty_item, null);
         emptyText.setVisibility(View.GONE);
 
-        ((ViewGroup)formListView.getParent()).addView(emptyText);
-        formListView.setEmptyView(emptyText);
+        ((ViewGroup) activityListView.getParent()).addView(emptyText);
+        activityListView.setEmptyView(emptyText);
 
         // map each contact's name to a TextView in the ListView layout
         String[] from = new String[] { "name" };
@@ -55,7 +53,7 @@ public class FormsActivity extends AppCompatActivity {
         contactAdapter = new SimpleCursorAdapter(
                 FormsActivity.this, R.layout.form_list_item, null, from, to, 0);
 
-        formListView.setAdapter(contactAdapter); // set contactView's adapter to bind the ListView to the CursorAdapter so the ListView can display the data.
+        activityListView.setAdapter(contactAdapter); // set contactView's adapter to bind the ListView to the CursorAdapter so the ListView can display the data.
 
 
         // FAB Controls

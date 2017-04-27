@@ -44,9 +44,10 @@
             android:name="edu.rit.columcross.permissiongranted.AddEditForm"
             android:label="@string/title_activity_new_form" />
 
-        <service
-            android:name="com.android.tools.fd.runtime.InstantRunService"
-            android:exported="true" />
+        <provider
+            android:name="com.android.tools.fd.runtime.InstantRunContentProvider"
+            android:authorities="edu.rit.columcross.permissiongranted.com.android.tools.fd.runtime.InstantRunContentProvider"
+            android:multiprocess="true" />
     </application>
 
 </manifest>

@@ -90,6 +90,7 @@ public class DatabaseConnector
      */
    public Cursor getAll(String table)
    {
+       //TODO: Why is this breaking?
       return database.query(table, new String[] {"_id", "name"},
          null, null, null, null, "name", null);
    }
