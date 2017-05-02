@@ -6,7 +6,7 @@
     density="xxhdpi"
     format="10"
     plugin-version="2.3.1"
-    timestamp="1493313838044"
+    timestamp="1493709693850"
     token="5864368757569817520"
     verifier="FULL_BUILD_REQUESTED" >
 
@@ -62,7 +62,7 @@
 
     <build
         build-mode="FULL"
-        timestamp="1493313838044"
+        timestamp="1493709693850"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="A:\Documents\School\2165\MAD2\PermissionGranted\app\build\intermediates\split-apk\debug\slices\slice_9.apk"

@@ -44,7 +44,7 @@ public class SignaturesActivity extends AppCompatActivity {
 
         // map each contact's name to a TextView in the ListView layout
         String[] from = new String[] { "name" };
-        int[] to = new int[] { R.id.formTextView };
+        int[] to = new int[] { R.id.signatureTextView };
         contactAdapter = new SimpleCursorAdapter(
                 SignaturesActivity.this, R.layout.signature_list_item, null, from, to, 0);
 
@@ -144,7 +144,7 @@ public class SignaturesActivity extends AppCompatActivity {
         {
             // create an Intent to launch the ViewContact Activity
             Intent viewContact =
-                    new Intent(SignaturesActivity.this, ViewForm.class);
+                    new Intent(SignaturesActivity.this, ViewSignature.class);
 
             // pass the selected contact's row ID as an extra with the Intent
             viewContact.putExtra(ROW_ID, id);

@@ -58,7 +58,7 @@ public class ViewForm extends AppCompatActivity {
             databaseConnector.open();
 
             // get a cursor containing all data on given entry
-            return databaseConnector.getOneForm(params[0]);
+            return databaseConnector.getOne("forms", params[0]);
         } // end method doInBackground
 
         // use the Cursor returned from the doInBackground method

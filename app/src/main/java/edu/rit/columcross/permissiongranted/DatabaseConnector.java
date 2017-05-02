@@ -63,7 +63,7 @@ public class DatabaseConnector
       newContact.put("email", email);
       newContact.put("formText", form);
 
-      Log.i("Insert", name);
+      Log.i("##############Insert", name);
       open(); // open the database
       database.insert("signatures", null, newContact);
       close(); // close the database
@@ -97,10 +97,10 @@ public class DatabaseConnector
 
    // get a Cursor containing all information about the contact specified
    // by the given id
-   public Cursor getOneForm(long id)
+   public Cursor getOne(String table, long id)
    {
       return database.query(
-         "forms", null, "_id=" + id, null, null, null, null);
+         table, null, "_id=" + id, null, null, null, null);
    } // end method getOnContact
 
    // delete the contact specified by the given String name
@@ -124,7 +124,10 @@ public class DatabaseConnector
       @Override
       public void onCreate(SQLiteDatabase db) 
       {
-         // query to create a new table named contacts
+
+         String createFormsTable = "CREATE TABLE forms(_id integer primary key autoincrement, name TEXT, body TEXT);";
+          String createSigsTable = "CREATE TABLE signatures(_id integer primary key autoincrement, name TEXT, email TEXT, formText TEXT);";
+          // query to create a new table named contacts
          String createQuery = "CREATE TABLE forms" +
             "(_id integer primary key autoincrement," +
             "name TEXT, body TEXT);" +
@@ -132,7 +135,8 @@ public class DatabaseConnector
                  "(_id integer primary key autoincrement," +
                  "name TEXT, email TEXT, formText TEXT);";
                   
-         db.execSQL(createQuery); // execute the query
+         db.execSQL(createFormsTable);
+          db.execSQL(createSigsTable);
       } // end method onCreate
 
       @Override
