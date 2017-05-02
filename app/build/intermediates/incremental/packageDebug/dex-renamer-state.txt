@@ -1,7 +1,4 @@
-#Tue May 02 03:18:26 EDT 2017
-base.0=A\:\\Documents\\School\\2165\\MAD2\\PermissionGranted\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_ee2a3c05328c1c6780dab8a39b0621a0f9b2cef7
-renamed.1=classes2.dex
+#Tue May 02 16:28:42 EDT 2017
+base.0=/Users/Student/AndroidStudioProjects/PermissionGranted/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main
 renamed.0=classes.dex
-file.1=A\:\\Documents\\School\\2165\\MAD2\\PermissionGranted\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_bc8575788eca026be8b92f830b25afed77bbec9f\\classes.dex
-base.1=A\:\\Documents\\School\\2165\\MAD2\\PermissionGranted\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_bc8575788eca026be8b92f830b25afed77bbec9f
-file.0=A\:\\Documents\\School\\2165\\MAD2\\PermissionGranted\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_ee2a3c05328c1c6780dab8a39b0621a0f9b2cef7\\classes.dex
+file.0=/Users/Student/AndroidStudioProjects/PermissionGranted/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex

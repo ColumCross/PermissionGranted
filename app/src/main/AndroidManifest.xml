@@ -16,7 +16,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".FormsActivity"
-            android:label="@string/app_name"
+            android:label="@string/forms_activity_title"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,7 +29,9 @@
         <activity
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings" />
-        <activity android:name=".SignaturesActivity" />
+        <activity
+            android:name=".SignaturesActivity"
+            android:label="@string/sigs_activity_title" />
 
         <activity
             android:name=".AddEditForm"

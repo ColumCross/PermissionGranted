@@ -2,10 +2,14 @@ package edu.rit.columcross.permissiongranted;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,6 +21,7 @@ public class ViewForm extends AppCompatActivity {
     private TextView formBodyTextView; // displays forms's text
     private EditText signeeName; // The name of the person signing
     private EditText signeeEmail; // The email of the person signing
+    private String formName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,10 +77,10 @@ public class ViewForm extends AppCompatActivity {
             int nameIndex = result.getColumnIndex("name");
             int bodyIndex = result.getColumnIndex("body");
 
-            String formName = result.getString(nameIndex);
+            formName = result.getString(nameIndex);
 
             // fill TextViews with the retrieved data
-            setTitle(result.getString(nameIndex));
+            setTitle(formName);
             formBodyTextView.setText(result.getString(bodyIndex));
 
             result.close(); // close the result cursor
@@ -134,4 +139,88 @@ public class ViewForm extends AppCompatActivity {
         databaseConnector.insertSignature(signeeName.getText().toString(), signeeEmail.getText().toString(), formBodyTextView.getText().toString());
     }
 
-}
+
+    // create the Activity's menu from a menu resource XML file
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        super.onCreateOptionsMenu(menu);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.view_form_menu, menu);
+        return true;
+    } // end method onCreateOptionsMenu
+
+    // handle choice from options menu
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        switch (item.getItemId()) // switch based on selected MenuItem's ID
+        {
+            case R.id.action_editForm:
+                // create an Intent to launch the AddEditContact Activity
+                Intent addEditContact =
+                        new Intent(this, AddEditForm.class);
+
+                // pass the selected contact's data as extras with the Intent
+                addEditContact.putExtra(FormsActivity.ROW_ID, rowID);
+                addEditContact.putExtra("name", formName);
+                addEditContact.putExtra("body", formBodyTextView.getText());
+                startActivity(addEditContact); // start the Activity
+                return true;
+            case R.id.action_deleteForm:
+                deleteContact(); // delete the displayed contact
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        } // end switch
+    } // end method onOptionsItemSelected
+
+    // delete a contact
+    private void deleteContact()
+    {
+        // create a new AlertDialog Builder
+        AlertDialog.Builder builder =
+                new AlertDialog.Builder(ViewForm.this);
+
+        builder.setTitle(R.string.confirmTitle); // title bar string
+        builder.setMessage(R.string.confirmMessage); // message to display
+
+        // provide an OK button that simply dismisses the dialog
+        builder.setPositiveButton(R.string.button_delete,
+                new DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick(DialogInterface dialog, int button)
+                    {
+                        final DatabaseConnector databaseConnector =
+                                new DatabaseConnector(ViewForm.this);
+
+                        // create an AsyncTask that deletes the contact in another
+                        // thread, then calls finish after the deletion
+                        AsyncTask<Long, Object, Object> deleteTask =
+                                new AsyncTask<Long, Object, Object>()
+                                {
+                                    @Override
+                                    protected Object doInBackground(Long... params)
+                                    {
+                                        databaseConnector.deleteContact(params[0]);
+                                        return null;
+                                    } // end method doInBackground
+
+                                    @Override
+                                    protected void onPostExecute(Object result)
+                                    {
+                                        finish(); // return to the AddressBook Activity
+                                    } // end method onPostExecute
+                                }; // end new AsyncTask
+
+                        // execute the AsyncTask to delete contact at rowID
+                        deleteTask.execute(new Long[] { rowID });
+                    } // end method onClick
+                } // end anonymous inner class
+        ); // end call to method setPositiveButton
+
+        builder.setNegativeButton(R.string.button_cancel, null);
+        builder.show(); // display the Dialog
+    } // end method deleteContact
+} // end class ViewContact

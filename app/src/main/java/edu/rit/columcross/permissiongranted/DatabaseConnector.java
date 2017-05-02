@@ -107,7 +107,7 @@ public class DatabaseConnector
    public void deleteContact(long id) 
    {
       open(); // open the database
-      database.delete("contacts", "_id=" + id, null);
+      database.delete("forms", "_id=" + id, null);
       close(); // close the database
    } // end method deleteContact
    

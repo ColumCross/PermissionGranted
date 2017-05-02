@@ -50,6 +50,7 @@ public class SignaturesActivity extends AppCompatActivity {
 
         activityListView.setAdapter(contactAdapter); // set contactView's adapter to bind the ListView to the CursorAdapter so the ListView can display the data.
 
+
     }
 
 
@@ -124,7 +125,7 @@ public class SignaturesActivity extends AppCompatActivity {
                 startActivity(addEditContact); // start the Activity
                 return true;
             case R.id.action_signatures:
-                startActivity(new Intent(this, SignaturesActivity.class));
+                startActivity(new Intent(this, FormsActivity.class));
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

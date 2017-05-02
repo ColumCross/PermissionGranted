@@ -1,10 +1,18 @@
 [
     {
-        "merged": "A:\\Documents\\School\\2165\\MAD2\\PermissionGranted\\app\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_bottom_sheet_slide_in.xml",
-        "source": "C:\\Users\\Colum\\.android\\build-cache\\0fd6bf0ac7afd8ab6c468049cf46568efc8a9105\\output\\res\\anim-v21\\design_bottom_sheet_slide_in.xml"
+        "merged": "/Users/Student/AndroidStudioProjects/PermissionGranted/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_out.xml",
+        "source": "/Users/Student/.android/build-cache/4267a9df9bff7522670daf7f231d65c13a27d5d7/output/res/anim-v21/design_bottom_sheet_slide_out.xml"
     },
     {
-        "merged": "A:\\Documents\\School\\2165\\MAD2\\PermissionGranted\\app\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_bottom_sheet_slide_out.xml",
-        "source": "C:\\Users\\Colum\\.android\\build-cache\\0fd6bf0ac7afd8ab6c468049cf46568efc8a9105\\output\\res\\anim-v21\\design_bottom_sheet_slide_out.xml"
+        "merged": "/Users/Student/AndroidStudioProjects/PermissionGranted/A:\\Documents\\School\\2165\\MAD2\\PermissionGranted\\app\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_bottom_sheet_slide_in.xml",
+        "source": "/Users/Student/AndroidStudioProjects/PermissionGranted/C:\\Users\\Colum\\.android\\build-cache\\0fd6bf0ac7afd8ab6c468049cf46568efc8a9105\\output\\res\\anim-v21\\design_bottom_sheet_slide_in.xml"
+    },
+    {
+        "merged": "/Users/Student/AndroidStudioProjects/PermissionGranted/A:\\Documents\\School\\2165\\MAD2\\PermissionGranted\\app\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_bottom_sheet_slide_out.xml",
+        "source": "/Users/Student/AndroidStudioProjects/PermissionGranted/C:\\Users\\Colum\\.android\\build-cache\\0fd6bf0ac7afd8ab6c468049cf46568efc8a9105\\output\\res\\anim-v21\\design_bottom_sheet_slide_out.xml"
+    },
+    {
+        "merged": "/Users/Student/AndroidStudioProjects/PermissionGranted/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_in.xml",
+        "source": "/Users/Student/.android/build-cache/4267a9df9bff7522670daf7f231d65c13a27d5d7/output/res/anim-v21/design_bottom_sheet_slide_in.xml"
     }
 ]
