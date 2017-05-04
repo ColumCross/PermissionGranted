@@ -1,29 +1,5 @@
 [
     {
-        "outputFile": "/Users/Student/AndroidStudioProjects/PermissionGranted/A:\\Documents\\School\\2165\\MAD2\\PermissionGranted\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 45,
-                    "endOffset": 96
-                },
-                "from": {
-                    "file": "/Users/Student/AndroidStudioProjects/PermissionGranted/C:\\Users\\Colum\\.android\\build-cache\\6ccd1abc26cf41d0d7fa1fe6424003af6a24101c\\output\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 229,
-                        "endColumn": 45,
-                        "endOffset": 270
-                    }
-                }
-            }
-        ]
-    },
-    {
         "outputFile": "/Users/Student/AndroidStudioProjects/PermissionGranted/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml",
         "map": [
             {
@@ -35,7 +11,7 @@
                     "endOffset": 96
                 },
                 "from": {
-                    "file": "/Users/Student/.android/build-cache/e6d63dae805b1e1f4691e1363e3c21daf29489f4/output/res/values/values.xml",
+                    "file": "/Users/Student/.android/build-cache/6940df359ba2d39961b025bc422c1b64157f95d1/output/res/values/values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,

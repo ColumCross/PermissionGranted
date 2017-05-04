@@ -11,31 +11,7 @@
                     "endOffset": 117
                 },
                 "from": {
-                    "file": "/Users/Student/.android/build-cache/ae0e24c38bae3269e406449a4e7e8a8ace9f8d52/output/res/values-h720dp-v13/values-h720dp-v13.xml",
-                    "position": {
-                        "startLine": 2,
-                        "startColumn": 4,
-                        "startOffset": 55,
-                        "endColumn": 66,
-                        "endOffset": 117
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "/Users/Student/AndroidStudioProjects/PermissionGranted/A:\\Documents\\School\\2165\\MAD2\\PermissionGranted\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h720dp-v13\\values-h720dp-v13.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 66,
-                    "endOffset": 117
-                },
-                "from": {
-                    "file": "/Users/Student/AndroidStudioProjects/PermissionGranted/C:\\Users\\Colum\\.android\\build-cache\\3999f0d7e4aeec0f8c9c89cd580fade6b99ba89f\\output\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
+                    "file": "/Users/Student/.android/build-cache/fca42de9995737406893fac91126e80cfe6fe489/output/res/values-h720dp-v13/values-h720dp-v13.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,

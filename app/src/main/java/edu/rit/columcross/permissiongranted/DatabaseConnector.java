@@ -125,16 +125,8 @@ public class DatabaseConnector
       public void onCreate(SQLiteDatabase db) 
       {
 
-         String createFormsTable = "CREATE TABLE forms(_id integer primary key autoincrement, name TEXT, body TEXT);";
-          String createSigsTable = "CREATE TABLE signatures(_id integer primary key autoincrement, name TEXT, email TEXT, formText TEXT);";
-          // query to create a new table named contacts
-         String createQuery = "CREATE TABLE forms" +
-            "(_id integer primary key autoincrement," +
-            "name TEXT, body TEXT);" +
-                 "CREATE TABLE signatures" +
-                 "(_id integer primary key autoincrement," +
-                 "name TEXT, email TEXT, formText TEXT);";
-                  
+         String createFormsTable = "CREATE TABLE forms(_id integer primary key autoincrement, name TEXT, body TEXT, creator TEXT, dateCreated DATE);";
+          String createSigsTable = "CREATE TABLE signatures(_id integer primary key autoincrement, name TEXT, email TEXT, formText TEXT, dateSigned DATE);";
          db.execSQL(createFormsTable);
           db.execSQL(createSigsTable);
       } // end method onCreate

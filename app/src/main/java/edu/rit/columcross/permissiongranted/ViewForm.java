@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,8 +13,11 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import java.text.NumberFormat;
 
 public class ViewForm extends AppCompatActivity {
 
@@ -135,8 +139,25 @@ public class ViewForm extends AppCompatActivity {
     // saves contact information to the database
     private void signContract() {
         // get DatabaseConnector to interact with the SQLite database
+        String name = signeeName.getText().toString();
+        String conditions = formBodyTextView.getText().toString();
+        String email = signeeEmail.getText().toString();
+
         DatabaseConnector databaseConnector = new DatabaseConnector(this);
-        databaseConnector.insertSignature(signeeName.getText().toString(), signeeEmail.getText().toString(), formBodyTextView.getText().toString());
+        databaseConnector.insertSignature(name, email, conditions);
+
+        // Display the order summary on the screen
+        String message = createOrderSummary(name, conditions);
+
+        // Use an intent to launch an email app.
+        // Send the order summary in the email body.
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:"+email)); // only email apps should handle this
+        intent.putExtra(Intent.EXTRA_SUBJECT,
+                "The consent form you signed");
+        intent.putExtra(Intent.EXTRA_TEXT, message);
+        //startActivity(Intent.createChooser(intent, "Test chooser to make sure the intent is firing."));
+        startActivity(intent);
     }
 
 
@@ -223,4 +244,21 @@ public class ViewForm extends AppCompatActivity {
         builder.setNegativeButton(R.string.button_cancel, null);
         builder.show(); // display the Dialog
     } // end method deleteContact
+
+
+    /**
+     * Create summary of the order.
+     *
+     * @param name            of the signee
+     * @param form           The terms they agreed to sign
+     * @return text summary
+     */
+    private String createOrderSummary(String name, String form) {
+        String emailBody = name + " has agreed to the following terms and conditions:";
+        emailBody += "\n";
+        emailBody += "\n";
+        emailBody += form;
+
+        return emailBody;
+    }
 } // end class ViewContact

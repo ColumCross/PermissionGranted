@@ -29,7 +29,6 @@
         android:ems="10"
         android:hint="Name"
         android:inputType="textPersonName"
-        android:text="Name"
         android:layout_above="@+id/vf_email"
         android:layout_alignLeft="@+id/vf_email"
         android:layout_alignStart="@+id/vf_email" />

@@ -1,18 +1,10 @@
 [
     {
-        "merged": "/Users/Student/AndroidStudioProjects/PermissionGranted/A:\\Documents\\School\\2165\\MAD2\\PermissionGranted\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_forms.xml",
-        "source": "/Users/Student/AndroidStudioProjects/PermissionGranted/A:\\Documents\\School\\2165\\MAD2\\PermissionGranted\\app\\src\\main\\res\\menu\\menu_forms.xml"
-    },
-    {
         "merged": "/Users/Student/AndroidStudioProjects/PermissionGranted/app/build/intermediates/res/merged/debug/menu/menu_forms.xml",
         "source": "/Users/Student/AndroidStudioProjects/PermissionGranted/app/src/main/res/menu/menu_forms.xml"
     },
     {
         "merged": "/Users/Student/AndroidStudioProjects/PermissionGranted/app/build/intermediates/res/merged/debug/menu/view_form_menu.xml",
         "source": "/Users/Student/AndroidStudioProjects/PermissionGranted/app/src/main/res/menu/view_form_menu.xml"
-    },
-    {
-        "merged": "/Users/Student/AndroidStudioProjects/PermissionGranted/A:\\Documents\\School\\2165\\MAD2\\PermissionGranted\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_test.xml",
-        "source": "/Users/Student/AndroidStudioProjects/PermissionGranted/A:\\Documents\\School\\2165\\MAD2\\PermissionGranted\\app\\src\\main\\res\\menu\\menu_test.xml"
     }
 ]
