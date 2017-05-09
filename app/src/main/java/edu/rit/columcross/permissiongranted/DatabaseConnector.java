@@ -43,13 +43,16 @@ public class DatabaseConnector
    } // end method close
 
    // inserts a new form in the database
-   public void insertForm(String name, String text)
-   {
+   public void insertForm(String name, String text, String creator) {
       ContentValues newContact = new ContentValues();
       newContact.put("name", name);
       newContact.put("body", text);
+      newContact.put("creator", creator);
 
-      Log.i("Insert", name);
+      //TODO: Add date to the database.
+
+      String insertMessage = name+" '"+text+"' created by "+creator+" on "+"[COMING SOON]";
+      Log.i("Insert new form", insertMessage);
       open(); // open the database
       database.insert("forms", null, newContact);
       close(); // close the database
@@ -70,11 +73,13 @@ public class DatabaseConnector
    } // end method insertContact
 
    // Edits a form in the database
-   public void editForm(long id, String name, String body)
-   {
+   public void editForm(long id, String name, String body, String creator) {
       ContentValues editContact = new ContentValues();
       editContact.put("name", name);
       editContact.put("body", body);
+      editContact.put("creator", creator);
+
+      //TODO: Add date to the database.
 
       open(); // open the database
       database.update("forms", editContact, "_id=" + id, null);
@@ -90,7 +95,6 @@ public class DatabaseConnector
      */
    public Cursor getAll(String table)
    {
-       //TODO: Why is this breaking?
       return database.query(table, new String[] {"_id", "name"},
          null, null, null, null, "name", null);
    }

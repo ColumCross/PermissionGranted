@@ -7,18 +7,22 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
+import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
-public class AddEditForm extends Activity {
+public class AddEditForm extends AppCompatActivity {
     private long rowID; // id of contact being edited, if any
 
     // EditTexts for form information
     private EditText nameEditText;
     private EditText formEditText;
+    private EditText creatorEditText;
 
     /**
      * called when the Activity is first started
@@ -29,9 +33,11 @@ public class AddEditForm extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState); // call super's onCreate
         setContentView(R.layout.activity_new_form); // inflate the UI
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         nameEditText = (EditText) findViewById(R.id.editFormName);
         formEditText = (EditText) findViewById(R.id.editFormText);
+        creatorEditText = (EditText) findViewById(R.id.nf_creatorName);
 
         Bundle extras = getIntent().getExtras(); // get Bundle of extras
         // if there are extras, use them to populate the EditTexts
@@ -39,6 +45,7 @@ public class AddEditForm extends Activity {
             rowID = extras.getLong("row_id");
             nameEditText.setText(extras.getString("name"));
             formEditText.setText(extras.getString("body"));
+            creatorEditText.setText(extras.getString("creator"));
 
         }
 
@@ -46,6 +53,7 @@ public class AddEditForm extends Activity {
         Button saveContactButton =
                 (Button) findViewById(R.id.saveFormButton);
         saveContactButton.setOnClickListener(saveContactButtonClicked);
+
     }
 
     /**
@@ -92,9 +100,20 @@ public class AddEditForm extends Activity {
         // get DatabaseConnector to interact with the SQLite database
         DatabaseConnector databaseConnector = new DatabaseConnector(this);
         if (getIntent().getExtras() == null) {
-            databaseConnector.insertForm(nameEditText.getText().toString(), formEditText.getText().toString());
+            databaseConnector.insertForm(nameEditText.getText().toString(), formEditText.getText().toString(), creatorEditText.getText().toString());
         } else {
-            databaseConnector.editForm(rowID, nameEditText.getText().toString(), formEditText.getText().toString());
+            databaseConnector.editForm(rowID, nameEditText.getText().toString(), formEditText.getText().toString(), creatorEditText.getText().toString());
+        }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
     }
 }

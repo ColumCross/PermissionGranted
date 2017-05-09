@@ -1,5 +1,7 @@
 package edu.rit.columcross.permissiongranted;
 
+import android.app.PendingIntent;
+import android.app.TaskStackBuilder;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.AsyncTask;
@@ -68,6 +70,8 @@ public class FormsActivity extends AppCompatActivity {
                 startActivity(addNewContact); // start the AddEditContact Activity
             }
         });
+
+        setTitle(R.string.forms_activity_title);
     }
 
     @Override
@@ -125,27 +129,27 @@ public class FormsActivity extends AppCompatActivity {
         return true;
     }
 
-
-
-    // handle choice from options menu
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
-        switch (item.getItemId()) // switch based on selected MenuItem's ID
-        {
-            case R.id.action_settings:
+    /**
+     * handle choice from options menu
+     * @param item  The menu item selected.
+     * @return  Who the fuck knows.
+     */
+    @Override public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_forms:
                 // create an Intent to launch the Settings Activity
                 Intent addEditContact =
-                        new Intent(this, SettingsActivity.class);
+                        new Intent(this, FormsActivity.class);
+                addEditContact.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(addEditContact); // start the Activity
                 return true;
             case R.id.action_signatures:
-                startActivity(new Intent(this, SignaturesActivity.class));
+                startActivity(new Intent(this, SignaturesActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK));
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
-        } // end switch
-    } // end method onOptionsItemSelected
+        }
+    }
 
 
 
@@ -161,9 +165,14 @@ public class FormsActivity extends AppCompatActivity {
             // create an Intent to launch the ViewContact Activity
             Intent viewContact =
                     new Intent(FormsActivity.this, ViewForm.class);
+            viewContact.putExtra(ROW_ID, id);
+
+            //TaskStackBuilder viewForm = new TaskStackBuilder.create(this);
+            //viewForm.addParentStack(FormsActivity.class);
+           // viewForm.addNextIntent(viewContact);
 
             // pass the selected contact's row ID as an extra with the Intent
-            viewContact.putExtra(ROW_ID, id);
+
             startActivity(viewContact); // start the ViewContact Activity
         } // end method onItemClick
     }; // end viewContactListener

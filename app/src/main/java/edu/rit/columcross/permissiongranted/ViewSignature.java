@@ -3,8 +3,10 @@ package edu.rit.columcross.permissiongranted;
 import android.app.AlertDialog;
 import android.database.Cursor;
 import android.os.AsyncTask;
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,6 +23,8 @@ public class ViewSignature extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_signature);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         formBodyTextView = (TextView) findViewById(R.id.vs_formBody);
 
@@ -82,6 +86,15 @@ public class ViewSignature extends AppCompatActivity {
         } // end method onPostExecute
     } // end class LoadContactTask
 
-
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // Respond to the action bar's Up/Home button
+            case android.R.id.home:
+                NavUtils.navigateUpFromSameTask(this);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
 }

@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -26,13 +27,17 @@ public class ViewForm extends AppCompatActivity {
     private EditText signeeName; // The name of the person signing
     private EditText signeeEmail; // The email of the person signing
     private String formName;
+    private TextView creator;
+    private TextView createdDate; //TODO: Link up to everything.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_form);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         formBodyTextView = (TextView) findViewById(R.id.vf_formBody);
+        creator = (TextView) findViewById(R.id.vf_creatorName);
 
         // get the selected contact's row ID
         Bundle extras = getIntent().getExtras();
@@ -80,12 +85,14 @@ public class ViewForm extends AppCompatActivity {
             // get the column index for each data item
             int nameIndex = result.getColumnIndex("name");
             int bodyIndex = result.getColumnIndex("body");
+            int creatorIndex = result.getColumnIndex("creator");
 
             formName = result.getString(nameIndex);
 
             // fill TextViews with the retrieved data
             setTitle(formName);
             formBodyTextView.setText(result.getString(bodyIndex));
+            creator.setText(result.getString(creatorIndex));
 
             result.close(); // close the result cursor
             databaseConnector.close(); // close database connection
@@ -191,6 +198,9 @@ public class ViewForm extends AppCompatActivity {
             case R.id.action_deleteForm:
                 deleteContact(); // delete the displayed contact
                 return true;
+            case android.R.id.home:
+                NavUtils.navigateUpFromSameTask(this);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         } // end switch
@@ -254,7 +264,7 @@ public class ViewForm extends AppCompatActivity {
      * @return text summary
      */
     private String createOrderSummary(String name, String form) {
-        String emailBody = name + " has agreed to the following terms and conditions:";
+        String emailBody = name + " has agreed to the following terms and conditions set forth by "+creator.getText().toString()+":";
         emailBody += "\n";
         emailBody += "\n";
         emailBody += form;

@@ -3,14 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="edu.rit.columcross.permissiongranted.FormsActivity">
     <item
-        android:id="@+id/action_signatures"
+        android:id="@+id/action_forms"
         android:orderInCategory="100"
-        android:title="@string/action_sigs"
+        android:title="@string/action_forms"
         app:showAsAction="never" />
 
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_signatures"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
+        android:title="@string/action_sigs"
         app:showAsAction="never" />
 </menu>

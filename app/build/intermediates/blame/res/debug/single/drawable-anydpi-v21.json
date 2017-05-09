@@ -1,10 +1,18 @@
 [
     {
-        "merged": "/Users/Student/AndroidStudioProjects/PermissionGranted/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/design_ic_visibility_off.xml",
-        "source": "/Users/Student/.android/build-cache/27b4aa889989e103756ec6c6698e997291f00f02/output/res/drawable-anydpi-v21/design_ic_visibility_off.xml"
+        "merged": "A:\\Documents\\School\\2165\\MAD2\\PermissionGranted\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\design_ic_visibility.xml",
+        "source": "C:\\Users\\Colum\\.android\\build-cache\\0fd6bf0ac7afd8ab6c468049cf46568efc8a9105\\output\\res\\drawable-anydpi-v21\\design_ic_visibility.xml"
     },
     {
-        "merged": "/Users/Student/AndroidStudioProjects/PermissionGranted/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/design_ic_visibility.xml",
-        "source": "/Users/Student/.android/build-cache/27b4aa889989e103756ec6c6698e997291f00f02/output/res/drawable-anydpi-v21/design_ic_visibility.xml"
+        "merged": "A:\\Users\\Student\\AndroidStudioProjects\\PermissionGranted\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\design_ic_visibility_off.xml",
+        "source": "A:\\Users\\Student\\.android\\build-cache\\27b4aa889989e103756ec6c6698e997291f00f02\\output\\res\\drawable-anydpi-v21\\design_ic_visibility_off.xml"
+    },
+    {
+        "merged": "A:\\Users\\Student\\AndroidStudioProjects\\PermissionGranted\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\design_ic_visibility.xml",
+        "source": "A:\\Users\\Student\\.android\\build-cache\\27b4aa889989e103756ec6c6698e997291f00f02\\output\\res\\drawable-anydpi-v21\\design_ic_visibility.xml"
+    },
+    {
+        "merged": "A:\\Documents\\School\\2165\\MAD2\\PermissionGranted\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\design_ic_visibility_off.xml",
+        "source": "C:\\Users\\Colum\\.android\\build-cache\\0fd6bf0ac7afd8ab6c468049cf46568efc8a9105\\output\\res\\drawable-anydpi-v21\\design_ic_visibility_off.xml"
     }
 ]

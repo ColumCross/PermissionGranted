@@ -14,9 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".FormsActivity"
-            android:label="@string/forms_activity_title"
+        <activity android:name=".FormsActivity"
+            android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,8 +23,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ViewForm" />
-        <activity android:name=".ViewSignature" />
+        <activity android:name=".ViewForm"
+            android:parentActivityName=".FormsActivity" />
+        <activity android:name=".ViewSignature"
+            android:parentActivityName=".SignaturesActivity"
+            />
         <activity
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings" />

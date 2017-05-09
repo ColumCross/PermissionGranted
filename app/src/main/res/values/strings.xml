@@ -5,8 +5,8 @@
     <string name="sigs_activity_title">Your Signatures</string>
 
     <!-- Strings related to Menus -->
-    <string name="action_sigs">Forms/Signatures</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_sigs">Signatures</string>
+    <string name="action_forms">Forms</string>
 
     <string name="action_edFor">Edit Form</string>
 
@@ -22,6 +22,8 @@
 
     <string name="prompt_name">Form Name</string>
     <string name="prompt_form">Form Text</string>
+    <string name="prompt_creator">Your Name</string>
+
     <string name="title_activity_settings">Settings</string>
 
     <!-- Strings for the Forms Page -->

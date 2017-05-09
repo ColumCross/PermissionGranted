@@ -1,6 +1,10 @@
 [
     {
-        "merged": "/Users/Student/AndroidStudioProjects/PermissionGranted/app/build/intermediates/res/merged/debug/drawable-v23/abc_control_background_material.xml",
-        "source": "/Users/Student/.android/build-cache/fca42de9995737406893fac91126e80cfe6fe489/output/res/drawable-v23/abc_control_background_material.xml"
+        "merged": "A:\\Users\\Student\\AndroidStudioProjects\\PermissionGranted\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v23\\abc_control_background_material.xml",
+        "source": "A:\\Users\\Student\\.android\\build-cache\\fca42de9995737406893fac91126e80cfe6fe489\\output\\res\\drawable-v23\\abc_control_background_material.xml"
+    },
+    {
+        "merged": "A:\\Documents\\School\\2165\\MAD2\\PermissionGranted\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v23\\abc_control_background_material.xml",
+        "source": "C:\\Users\\Colum\\.android\\build-cache\\3999f0d7e4aeec0f8c9c89cd580fade6b99ba89f\\output\\res\\drawable-v23\\abc_control_background_material.xml"
     }
 ]

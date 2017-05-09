@@ -110,29 +110,23 @@ public class SignaturesActivity extends AppCompatActivity {
         return true;
     }
 
-
-
-    // handle choice from options menu
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
-        switch (item.getItemId()) // switch based on selected MenuItem's ID
-        {
-            case R.id.action_settings:
-                // create an Intent to launch the Settings Activity
-                Intent addEditContact =
-                        new Intent(this, SettingsActivity.class);
-                startActivity(addEditContact); // start the Activity
+    /**
+     * handle choice from options menu
+     * @param item  The menu item selected.
+     * @return  Who the fuck knows.
+     */
+    @Override public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_forms:
+                startActivity(new Intent(this, FormsActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK));
                 return true;
             case R.id.action_signatures:
-                startActivity(new Intent(this, FormsActivity.class));
+                startActivity(new Intent(this, SignaturesActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK));
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
-        } // end switch
-    } // end method onOptionsItemSelected
-
-
+        }
+    }
 
 
 

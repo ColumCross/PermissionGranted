@@ -70,7 +70,7 @@
                     android:id="@+id/nf_creatorName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/prompt_form"
+                    android:hint="@string/prompt_creator"
                     android:imeActionId="@+id/editFormText"
                     android:imeOptions="actionUnspecified"
                     android:inputType="text"
