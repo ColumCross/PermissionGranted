@@ -1,23 +1,19 @@
 package edu.rit.columcross.permissiongranted;
 
-import android.app.AlertDialog;
 import android.database.Cursor;
 import android.os.AsyncTask;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 public class ViewSignature extends AppCompatActivity {
 
     private long rowID; // selected forms ID
     private TextView formBodyTextView; // displays forms's text
-    private TextView signeeName; // The name of the person signing
-    private TextView signeeEmail; // The email of the person signing
+    private TextView topText; // The name of the person signing
+    private TextView bottomText; // The email of the person signing
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +28,8 @@ public class ViewSignature extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         rowID = extras.getLong(FormsActivity.ROW_ID);
 
-        signeeName = (TextView) findViewById(R.id.vs_name);
-        signeeEmail = (TextView) findViewById(R.id.vs_email);
+        topText = (TextView) findViewById(R.id.vs_name);
+        bottomText = (TextView) findViewById(R.id.vs_email);
 
     }
 
@@ -74,12 +70,14 @@ public class ViewSignature extends AppCompatActivity {
             int emailIndex = result.getColumnIndex("email");
 
             String signer = result.getString(nameIndex);
+            String creatorName = result.getString(result.getColumnIndex("formCreator"));
+            String dateCreated = result.getString(result.getColumnIndex("creationDate"));
 
             // fill TextViews with the retrieved data
             setTitle(signer);
             formBodyTextView.setText(result.getString(bodyIndex));
-            signeeName.setText(signer);
-            signeeEmail.setText(result.getString(emailIndex));
+            topText.setText("Created by "+creatorName+" on "+dateCreated);
+            bottomText.setText("Signed by "+signer+" <"+result.getString(emailIndex)+"> on "+result.getString(result.getColumnIndex("dateSigned")));
 
             result.close(); // close the result cursor
             databaseConnector.close(); // close database connection
@@ -91,7 +89,7 @@ public class ViewSignature extends AppCompatActivity {
         switch (item.getItemId()) {
             // Respond to the action bar's Up/Home button
             case android.R.id.home:
-                NavUtils.navigateUpFromSameTask(this);
+                finish();
                 return true;
         }
         return super.onOptionsItemSelected(item);

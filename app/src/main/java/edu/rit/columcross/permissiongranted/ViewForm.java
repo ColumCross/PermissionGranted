@@ -28,7 +28,7 @@ public class ViewForm extends AppCompatActivity {
     private EditText signeeEmail; // The email of the person signing
     private String formName;
     private TextView creator;
-    private TextView createdDate; //TODO: Link up to everything.
+    private TextView createdDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,11 +88,15 @@ public class ViewForm extends AppCompatActivity {
             int creatorIndex = result.getColumnIndex("creator");
 
             formName = result.getString(nameIndex);
+            String creationDate = result.getString(result.getColumnIndex("dateCreated"));
 
             // fill TextViews with the retrieved data
             setTitle(formName);
             formBodyTextView.setText(result.getString(bodyIndex));
             creator.setText(result.getString(creatorIndex));
+
+            createdDate = (TextView) findViewById(R.id.vf_createdDate);
+            createdDate.setText(creationDate);
 
             result.close(); // close the result cursor
             databaseConnector.close(); // close database connection
@@ -151,7 +155,7 @@ public class ViewForm extends AppCompatActivity {
         String email = signeeEmail.getText().toString();
 
         DatabaseConnector databaseConnector = new DatabaseConnector(this);
-        databaseConnector.insertSignature(name, email, conditions);
+        databaseConnector.insertSignature(name, email, conditions, creator.getText().toString(), createdDate.getText().toString());
 
         // Display the order summary on the screen
         String message = createOrderSummary(name, conditions);
@@ -199,7 +203,7 @@ public class ViewForm extends AppCompatActivity {
                 deleteContact(); // delete the displayed contact
                 return true;
             case android.R.id.home:
-                NavUtils.navigateUpFromSameTask(this);
+                finish();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

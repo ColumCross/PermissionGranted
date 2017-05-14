@@ -11,6 +11,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.util.Log;
 
+import java.util.Date;
+
 // IF THIS IS HERE THE GIT PROPERLY WORKED.
 
 public class DatabaseConnector 
@@ -49,9 +51,10 @@ public class DatabaseConnector
       newContact.put("body", text);
       newContact.put("creator", creator);
 
-      //TODO: Add date to the database.
+      Date creationDate = new Date();
+      newContact.put("dateCreated", creationDate.toString());
 
-      String insertMessage = name+" '"+text+"' created by "+creator+" on "+"[COMING SOON]";
+      String insertMessage = name+" '"+text+"' created by "+creator+" on "+creationDate;
       Log.i("Insert new form", insertMessage);
       open(); // open the database
       database.insert("forms", null, newContact);
@@ -59,12 +62,16 @@ public class DatabaseConnector
    } // end method insertForm
 
    // inserts a new contact in the database
-   public void insertSignature(String name, String email, String form)
+   public void insertSignature(String name, String email, String formText, String creatorName, String dateCreated)
    {
       ContentValues newContact = new ContentValues();
       newContact.put("name", name);
       newContact.put("email", email);
-      newContact.put("formText", form);
+      newContact.put("formText", formText);
+      newContact.put("formCreator", creatorName);
+      newContact.put("creationDate", dateCreated);
+      newContact.put("dateSigned", new Date().toString());
+
 
       Log.i("##############Insert", name);
       open(); // open the database
@@ -79,7 +86,7 @@ public class DatabaseConnector
       editContact.put("body", body);
       editContact.put("creator", creator);
 
-      //TODO: Add date to the database.
+      editContact.put("dateCreated", new Date().toString());
 
       open(); // open the database
       database.update("forms", editContact, "_id=" + id, null);
@@ -130,7 +137,7 @@ public class DatabaseConnector
       {
 
          String createFormsTable = "CREATE TABLE forms(_id integer primary key autoincrement, name TEXT, body TEXT, creator TEXT, dateCreated DATE);";
-          String createSigsTable = "CREATE TABLE signatures(_id integer primary key autoincrement, name TEXT, email TEXT, formText TEXT, dateSigned DATE);";
+          String createSigsTable = "CREATE TABLE signatures(_id integer primary key autoincrement, name TEXT, email TEXT, formText TEXT, formCreator TEXT, creationDate DATE, dateSigned DATE);";
          db.execSQL(createFormsTable);
           db.execSQL(createSigsTable);
       } // end method onCreate
