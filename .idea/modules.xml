@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/PermissionGranted-a9b59105f4b275e7295c07fc841c1e42d1f02987.iml" filepath="$PROJECT_DIR$/PermissionGranted-a9b59105f4b275e7295c07fc841c1e42d1f02987.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+    </modules>
+  </component>
+</project>
