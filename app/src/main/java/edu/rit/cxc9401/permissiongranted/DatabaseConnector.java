@@ -2,8 +2,11 @@
 // Provides easy connection and creation of UserContacts database.
 package edu.rit.cxc9401.permissiongranted;
 
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
@@ -15,12 +18,15 @@ import java.util.Date;
 
 // IF THIS IS HERE THE GIT PROPERLY WORKED.
 
-public class DatabaseConnector 
-{
-   // database name
-   private static final String DATABASE_NAME = "PermissionGranted";
+public class DatabaseConnector {
+
+   private static final String DATABASE_NAME = "PermissionGranted"; // database name
+    private static final String FORM_TABLE_NAME = "forms";
+    private static final String SIGS_TABLE_NAME = "signatures";
+
    private SQLiteDatabase database; // database object
    private DatabaseOpenHelper databaseOpenHelper; // database helper
+    private Context callingContext;
 
    // public constructor for DatabaseConnector
    public DatabaseConnector(Context context)
@@ -28,6 +34,7 @@ public class DatabaseConnector
       // create a new DatabaseOpenHelper
       databaseOpenHelper = 
          new DatabaseOpenHelper(context, DATABASE_NAME, null, 1);
+      callingContext = context;
    } // end DatabaseConnector constructor
 
    // open the database connection
@@ -114,12 +121,49 @@ public class DatabaseConnector
          table, null, "_id=" + id, null, null, null, null);
    } // end method getOnContact
 
-   // delete the contact specified by the given String name
-   public void deleteContact(long id) 
-   {
-      open(); // open the database
-      database.delete("forms", "_id=" + id, null);
-      close(); // close the database
+    /**
+     * Deletes the requested item from the internal database. //TODO: Allow for the deletion of signatures
+     * @param id The id of the LIST to be deleted.
+     * @param message The name of the grammatical object in the deletion dialog.
+     */
+   public void deleteItem(long id, String message) {
+
+       // create a new AlertDialog Builder
+       AlertDialog.Builder builder =
+               new AlertDialog.Builder(callingContext);
+
+       builder.setTitle("Delete "+message+"?"); // title bar string
+       builder.setMessage("Are you sure you want to delete "+message+"? This action is permanent and cannot be undone."); // message to display
+
+       // provide an OK button that simply dismisses the dialog
+       builder.setPositiveButton(R.string.button_delete,
+               new DialogInterface.OnClickListener()
+               {
+                   @Override
+                   public void onClick(DialogInterface dialog, int button)
+                   {
+                       String tableToDeleteFrom;
+                       if(callingContext.getClass() == ViewForm.class) {
+                           Log.i("CONTEXT SWITCH", "It's a form");
+                           tableToDeleteFrom = FORM_TABLE_NAME;
+                       } else if(callingContext.getClass() == ViewSignature.class) {
+                           Log.i("CONTEXT SWITCH", "It's a signature");
+                           tableToDeleteFrom = SIGS_TABLE_NAME;
+                       } else {
+                           Log.i("CONTEXT SWITCH", "It's NOTHING!!!");
+                           throw new RuntimeException("Bad calling class");
+                       }
+                       open(); // open the database
+                       database.delete(tableToDeleteFrom, "_id=" + id, null);
+                       close(); // close the database
+                       ((Activity)callingContext).finish();
+//                       callingContext.finish();
+                   } // end method onClick
+               } // end anonymous inner class
+       ); // end call to method setPositiveButton
+
+       builder.setNegativeButton(R.string.button_cancel, null);
+       builder.show(); // display the Dialog
    } // end method deleteContact
    
    private class DatabaseOpenHelper extends SQLiteOpenHelper

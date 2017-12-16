@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="edu.rit.columcross.permissiongranted.ViewSignature">
+    <item
+        android:id="@+id/action_deleteSig"
+        android:icon="@android:drawable/ic_delete"
+        android:orderInCategory="100"
+        android:title="@string/button_delete"
+        app:showAsAction="never|always" />
+</menu>

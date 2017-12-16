@@ -4,6 +4,9 @@ import android.database.Cursor;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -23,14 +26,14 @@ public class ViewSignature extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-        formBodyTextView = (TextView) findViewById(R.id.vs_formBody);
+        formBodyTextView = findViewById(R.id.vs_formBody);
 
         // get the selected contact's row ID
         Bundle extras = getIntent().getExtras();
         rowID = extras.getLong(FormsActivity.ROW_ID);
 
-        topText = (TextView) findViewById(R.id.vs_name);
-        bottomText = (TextView) findViewById(R.id.vs_email);
+        topText = findViewById(R.id.vs_name);
+        bottomText = findViewById(R.id.vs_email);
 
     }
 
@@ -85,15 +88,33 @@ public class ViewSignature extends AppCompatActivity {
         } // end method onPostExecute
     } // end class LoadContactTask
 
+    /**
+     * create the Activity's menu from a menu resource XML file
+     * @param menu
+     * @return Always True
+     */
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.view_signature_menu, menu);
+        return true;
+    } // end method onCreateOptionsMenu
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.action_deleteSig:
+                new DatabaseConnector(ViewSignature.this).deleteItem(rowID,"this signature");
+                return true;
+
             // Respond to the action bar's Up/Home button
             case android.R.id.home:
                 finish();
                 return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
     }
 
 }

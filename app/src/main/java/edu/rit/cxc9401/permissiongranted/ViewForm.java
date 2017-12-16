@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -15,8 +16,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
-import edu.rit.cxc9401.permissiongranted.R;
 
 public class ViewForm extends AppCompatActivity {
 
@@ -34,18 +33,18 @@ public class ViewForm extends AppCompatActivity {
         setContentView(R.layout.activity_view_form);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        formBodyTextView = (TextView) findViewById(R.id.vf_formBody);
-        creator = (TextView) findViewById(R.id.vf_creatorName);
+        formBodyTextView = findViewById(R.id.vf_formBody);
+        creator = findViewById(R.id.vf_creatorName);
 
         // get the selected contact's row ID
         Bundle extras = getIntent().getExtras();
         rowID = extras.getLong(FormsActivity.ROW_ID);
 
-        signeeName = (EditText) findViewById(R.id.vf_nameEditText);
-        signeeEmail = (EditText) findViewById(R.id.vf_email);
+        signeeName = findViewById(R.id.vf_nameEditText);
+        signeeEmail = findViewById(R.id.vf_email);
 
         // set event listener for the Save Contact Button
-        Button consentButton = (Button) findViewById(R.id.vf_consentButton);
+        Button consentButton = findViewById(R.id.vf_consentButton);
         consentButton.setOnClickListener(formSigned);
     }
 
@@ -60,6 +59,7 @@ public class ViewForm extends AppCompatActivity {
     } // end method onResume
 
     // performs database query outside GUI thread
+    //TODO: Put in the other class file
     private class LoadContactTask extends AsyncTask<Long, Object, Cursor> {
         DatabaseConnector databaseConnector =
                 new DatabaseConnector(ViewForm.this);
@@ -93,7 +93,7 @@ public class ViewForm extends AppCompatActivity {
             formBodyTextView.setText(result.getString(bodyIndex));
             creator.setText(result.getString(creatorIndex));
 
-            createdDate = (TextView) findViewById(R.id.vf_createdDate);
+            createdDate = findViewById(R.id.vf_createdDate);
             createdDate.setText(creationDate);
 
             result.close(); // close the result cursor
@@ -198,7 +198,7 @@ public class ViewForm extends AppCompatActivity {
                 startActivity(addEditContact); // start the Activity
                 return true;
             case R.id.action_deleteForm:
-                deleteContact(); // delete the displayed contact
+                deleteItem(); // delete the displayed contact
                 return true;
             case android.R.id.home:
                 finish();
@@ -209,53 +209,12 @@ public class ViewForm extends AppCompatActivity {
     } // end method onOptionsItemSelected
 
     // delete a contact
-    private void deleteContact()
+    private void deleteItem()
     {
-        // create a new AlertDialog Builder
-        AlertDialog.Builder builder =
-                new AlertDialog.Builder(ViewForm.this);
-
-        builder.setTitle(R.string.confirmTitle); // title bar string
-        builder.setMessage(R.string.confirmMessage); // message to display
-
-        // provide an OK button that simply dismisses the dialog
-        builder.setPositiveButton(R.string.button_delete,
-                new DialogInterface.OnClickListener()
-                {
-                    @Override
-                    public void onClick(DialogInterface dialog, int button)
-                    {
-                        final DatabaseConnector databaseConnector =
-                                new DatabaseConnector(ViewForm.this);
-
-                        // create an AsyncTask that deletes the contact in another
-                        // thread, then calls finish after the deletion
-                        AsyncTask<Long, Object, Object> deleteTask =
-                                new AsyncTask<Long, Object, Object>()
-                                {
-                                    @Override
-                                    protected Object doInBackground(Long... params)
-                                    {
-                                        databaseConnector.deleteContact(params[0]);
-                                        return null;
-                                    } // end method doInBackground
-
-                                    @Override
-                                    protected void onPostExecute(Object result)
-                                    {
-                                        finish(); // return to the AddressBook Activity
-                                    } // end method onPostExecute
-                                }; // end new AsyncTask
-
-                        // execute the AsyncTask to delete contact at rowID
-                        deleteTask.execute(new Long[] { rowID });
-                    } // end method onClick
-                } // end anonymous inner class
-        ); // end call to method setPositiveButton
-
-        builder.setNegativeButton(R.string.button_cancel, null);
-        builder.show(); // display the Dialog
-    } // end method deleteContact
+        final DatabaseConnector databaseConnector =
+                new DatabaseConnector(ViewForm.this);
+        databaseConnector.deleteItem(rowID,"this consent form");
+    } // end method deleteItem
 
 
     /**
