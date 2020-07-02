@@ -52,11 +52,11 @@
                 <EditText
                     android:id="@+id/editFormText"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="120dp"
                     android:hint="@string/prompt_form"
                     android:imeActionId="@+id/editFormText"
                     android:imeOptions="actionUnspecified"
-                    android:inputType="text"
+                    android:inputType="textMultiLine"
                     android:maxLines="5"
                     android:singleLine="true" />
 
