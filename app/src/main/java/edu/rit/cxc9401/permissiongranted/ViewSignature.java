@@ -4,6 +4,7 @@ import android.database.Cursor;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -35,6 +36,8 @@ public class ViewSignature extends AppCompatActivity {
         topText = findViewById(R.id.vs_name);
         bottomText = findViewById(R.id.vs_email);
 
+        // Make the form text scrollable
+        formBodyTextView.setMovementMethod(new ScrollingMovementMethod());
     }
 
 

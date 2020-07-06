@@ -34,7 +34,6 @@ public class SignaturesActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.newListFab);
         fab.hide();
-        //setContentView(R.layout.activity_main);
 
         activityListView = (ListView) findViewById(R.id.primaryListView);; // get the ListView
         activityListView.setOnItemClickListener(viewFormListener);

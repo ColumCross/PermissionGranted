@@ -4,8 +4,11 @@
 package edu.rit.cxc9401.permissiongranted;
 
 import android.app.AlertDialog;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.support.annotation.StringRes;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
@@ -35,6 +38,15 @@ public class AddEditForm extends AppCompatActivity {
         nameEditText = (EditText) findViewById(R.id.editFormName);
         formEditText = (EditText) findViewById(R.id.editFormText);
         creatorEditText = (EditText) findViewById(R.id.nf_creatorName);
+        SharedPreferences sharedPreferences =
+                PreferenceManager.getDefaultSharedPreferences(this /* Activity context */);
+        nameEditText.setText(sharedPreferences.getString("settings_name", ""));
+
+
+        // set event listener for the Save Contact Button
+        Button saveContactButton =
+                (Button) findViewById(R.id.saveFormButton);
+        saveContactButton.setOnClickListener(saveContactButtonClicked);
 
         Bundle extras = getIntent().getExtras(); // get Bundle of extras
         // if there are extras, use them to populate the EditTexts
@@ -44,13 +56,11 @@ public class AddEditForm extends AppCompatActivity {
             formEditText.setText(extras.getString("body"));
             creatorEditText.setText(extras.getString("creator"));
 
+            // Change the names of things to reflect that the form is being edited.
+            setTitle(R.string.edit_form);
+            saveContactButton.setText(R.string.edit_form_button);
+
         }
-
-        // set event listener for the Save Contact Button
-        Button saveContactButton =
-                (Button) findViewById(R.id.saveFormButton);
-        saveContactButton.setOnClickListener(saveContactButtonClicked);
-
     }
 
     /**

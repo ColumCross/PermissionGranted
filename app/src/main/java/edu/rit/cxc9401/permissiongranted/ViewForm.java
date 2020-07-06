@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -46,6 +47,9 @@ public class ViewForm extends AppCompatActivity {
         // set event listener for the Save Contact Button
         Button consentButton = findViewById(R.id.vf_consentButton);
         consentButton.setOnClickListener(formSigned);
+
+        // Make the form text scrollable
+        formBodyTextView.setMovementMethod(new ScrollingMovementMethod());
     }
 
 
