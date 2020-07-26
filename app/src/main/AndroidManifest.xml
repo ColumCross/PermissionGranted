@@ -33,5 +33,4 @@
             android:name=".AddEditForm"
             android:label="@string/title_activity_new_form" />
     </application>
-
 </manifest>
