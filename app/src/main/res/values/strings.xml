@@ -38,6 +38,6 @@
 
     <!-- Strings related to the Settings/About page -->
     <string name="about_info">Made by Colum Cross&lt;br/>&lt;a href=http://columcross.com>columcross.com&lt;/a>&lt;br/>Contact: &lt;a href=mailto:columcross@gmail.com>columcross@gmail.com&lt;/a></string>
-    <string name="legal_info">Use of Permission Granted ("The App") is at your own risk. The App is provided on an "as is" basis. The developer takes no responsibility for the legal efficacy of contracts or forms created by The App. The developer of the app accepts no responsibility for any technical failure of The App; or any damage or injury (legal or otherwise) to users or their equipment as a result of or relating to their use of The App.</string>
+    <string name="legal_info">Use of Permission Granted (\"The App\") is at your own risk. The App is provided on an \"as is\" basis. The developer takes no responsibility for the legal efficacy of contracts or forms created by The App. The developer of The App accepts no responsibility for any technical failure of The App; or any damage or injury (legal or otherwise) to users or their equipment as a result of or relating to their use of The App. The developer of The App is not a lawyer and makes no claim to having the knowledge of or the ability to give legal advice.</string>
 
 </resources>
